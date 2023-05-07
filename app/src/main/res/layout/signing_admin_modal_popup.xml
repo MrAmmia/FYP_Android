@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/loan_saved_bottom_sheet"
+    android:background="@drawable/loan_saved_bottom_sheet_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="32dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:id="@+id/status"
+            android:text="@string/adminLogin"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/adminIDEditText"
+            android:drawableStart="@drawable/ic_person"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/login_edit_text_background"
+            android:hint="@string/adminID"
+            android:paddingHorizontal="8dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/adminPasswordEditText"
+            android:drawableStart="@drawable/ic_lock"
+            android:paddingHorizontal="8dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/login_edit_text_background"
+            android:hint="@string/password"
+            android:inputType="textPassword" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:textColor="#fff"
+            android:id="@+id/adminLogin"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#8bbdff"
+            android:text="@string/login" />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

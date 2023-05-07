@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="net.thebookofcode.www.fyp.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_snapshotsFragment"
+            app:destination="@id/snapshotsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_notificationListFragment"
+            app:destination="@id/notificationListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/snapshotsFragment"
+        android:name="net.thebookofcode.www.fyp.ui.snapshots.SnapshotsFragment"
+        android:label="fragment_snapshots"
+        tools:layout="@layout/fragment_snapshots" >
+
+        <action
+            android:id="@+id/action_snapshotsFragment_to_snapshotListFragment"
+            app:destination="@id/snapshotListFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/notificationListFragment"
+        android:name="net.thebookofcode.www.fyp.ui.notifications.NotificationListFragment"
+        android:label="fragment_notifications"
+        tools:layout="@layout/fragment_notification_list" >
+        <action
+            android:id="@+id/action_notificationListFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="net.thebookofcode.www.fyp.ui.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="net.thebookofcode.www.fyp.ui.notifications.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/snapshotListFragment"
+        android:name="net.thebookofcode.www.fyp.ui.snapshots.SnapshotListFragment"
+        android:label="fragment_snapshot_list"
+        tools:layout="@layout/fragment_snapshot_list" >
+        <action
+            android:id="@+id/action_snapshotListFragment_to_imageOrVideoFragment"
+            app:destination="@id/imageOrVideoFragment" />
+        <argument
+            android:name="urls"
+            app:argType="string[]"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageOrVideoFragment"
+        android:name="net.thebookofcode.www.fyp.ui.snapshots.ImageOrVideoFragment"
+        android:label="fragment_image_or_video"
+        tools:layout="@layout/fragment_image_or_video" />
+</navigation>
