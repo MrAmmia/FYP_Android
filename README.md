@@ -13,6 +13,11 @@ This is an Android application that connects to a Raspberry Pi 3 server with an 
 
 The app communicates with a Raspberry Pi 3 server, which processes data from the detection system and sends notifications and media to the Android client.
 
+## Screnshots
+
+![S1](https://github.com/user-attachments/assets/abd0245d-8f54-49d3-aab3-0047be6c2e17)       ![S2](https://github.com/user-attachments/assets/4422978a-75ca-4f25-bae7-887cdec62f75)      ![S3](https://github.com/user-attachments/assets/d778d9b2-2bfc-4714-b9d0-6516b6cc8c5f)
+
+
 - **Server-side Python Code**: The intruder detection system and server-side communication is implemented in Python. You can view the Python code [here](https://github.com/MrAmmia/FYP_Python).
 
 ## Tech Stack
