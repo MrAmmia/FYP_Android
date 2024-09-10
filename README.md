@@ -47,7 +47,7 @@ The app communicates with a Raspberry Pi 3 server, which processes data from the
      ```bash
      python -m venv env
      source env/bin/activate  # On Windows use `env\Scripts\activate`
-   - **Install Dependencies**:Navigate to the project directory and install the required dependencies from requirements.txt
+   - **Install Dependencies**:Navigate to the project directory and install the required dependencies from [requirements.txt](https://github.com/MrAmmia/FYP_Python/blob/master/requirements.txt)
      ```bash
      pip install -r requirements.txt
 
