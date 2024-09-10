@@ -17,11 +17,11 @@ The app communicates with a Raspberry Pi 3 server, which processes data from the
 
 ## Tech Stack
 
-- **Android Development**: Java/Kotlin
-- **Server Communication**: RESTful API or WebSockets
+- **Android Development**: Kotlin
+- **Server Communication**: RESTful API
 - **Media Handling**: ExoPlayer for video playback
-- **Streaming Protocol**: RTSP/RTMP for live streaming
-- **Backend Server**: Raspberry Pi 3
+- **Notification**: Firebase Cloud Messaging
+- **Backend Server**: Django backend hosted onRaspberry Pi 3
 - **Intruder Detection**: Implemented on the server-side using Python
 
 ## Setup Instructions
@@ -31,12 +31,38 @@ The app communicates with a Raspberry Pi 3 server, which processes data from the
    git clone https://github.com/MrAmmia/FYP_Android.git
    cd FYP_Android
 
-2. Set up the server by following the instructions in the [Python server repository].
-3. Build the Android app in Android Studio or using Gradle:
+2. Set up the Intruder detection circuitry using the [circuit schematic](https://drive.google.com/file/d/1vbsxO61WuUxKJJC82_BYAV8Hb9vRPMYc/view?usp=sharing) & [diagram](https://drive.google.com/file/d/1QYjqIIEHI4IHIKjGHAdLVCsW5OR7Zf3R/view?usp=sharing) and [Python code](https://github.com/MrAmmia/FYP_Python/blob/master/motion.py)
+
+3. Set up the server by following the instructions in the [Python server repository](https://github.com/MrAmmia/FYP_Python).
+    - **Clone the Django Server Repository**
+      ```bash
+      git clone https://github.com/MrAmmia/FYP_Python.git
+      cd FYP_Python
+   - **Create a Virtual Environment**
+     ```bash
+     python -m venv env
+     source env/bin/activate  # On Windows use `env\Scripts\activate`
+   - **Install Dependencies**:Navigate to the project directory and install the required dependencies from requirements.txt
+     ```bash
+     pip install -r requirements.txt
+
+   - **Configure the Server Settings**: In the [settings.py](https://github.com/MrAmmia/FYP_Python/blob/master/fyp/settings.py) file, configure your database and other necessary settings, such as the IP address of the Raspberry Pi.
+      Ensure that the app can send notifications to the Android client using Firebase Cloud Messaging (FCM) or another push notification service
+   -  **Run Migrations**: Apply database migrations to set up the necessary tables:
+      ```bash
+      python manage.py migrate
+
+   - **Start the Server**: Run the Django development server
+     ```bash
+     python manage.py runserver 0.0.0.0:8000
+
+ 
+  
+4. Build the Android app in Android Studio or using Gradle:
    ```bash
    ./gradlew build
-4. Run the app on an Android device or emulator.
-5. Configure the app to connect to your Raspberry Pi server by updating the server URL in the configuration file.
+5. Run the app on an Android device or emulator.
+6. Configure the app to connect to your Raspberry Pi server by updating the server URL in the configuration file.
 
 ## How It Works
 
@@ -51,7 +77,7 @@ The app communicates with a Raspberry Pi 3 server, which processes data from the
    - Enhanced AI for more accurate intrusion detection.
 
 ## Project Report
-   You can find the detailed project report [here](https://drive.google.com/file/d/1IwOLd_-q2-xBeFQMKTZ0ImCQV4o5IB-F/view?usp=drive_link).
+   You can find the detailed project report [here](https://drive.google.com/file/d/1IwOLd_-q2-xBeFQMKTZ0ImCQV4o5IB-F/view?usp=sharing)
 
 ## Contributing
   Contributions are welcome! Please feel free to fork the repository, open issues, and submit pull requests.
