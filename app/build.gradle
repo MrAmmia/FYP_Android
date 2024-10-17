@@ -97,4 +97,7 @@ dependencies {
 
     // navigation
     implementation 'com.google.firebase:firebase-iid:21.1.0'
+
+    // exoPlayer
+    implementation ("com.google.android.exoplayer:exoplayer:2.15.0")
 }
